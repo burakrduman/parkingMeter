@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1512765119">
-  <File Type="OPT-DCP" Name="display_controller_opt.dcp"/>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1512765783">
+  <File Type="OPT-DCP" Name="main_opt.dcp"/>
   <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/impl_1/constrs_in.xml"/>
   <File Type="RUN-SRCS" Name="$PDATADIR/runs/impl_1/sources.xml"/>
-  <File Type="ROUTE-DCP" Name="display_controller_routed.dcp"/>
-  <File Type="PA-TCL" Name="display_controller.tcl"/>
+  <File Type="ROUTE-DCP" Name="main_routed.dcp"/>
+  <File Type="PA-TCL" Name="main.tcl"/>
   <File Type="RUN-STRAT" Name="$PDATADIR/runs/impl_1/impl_1.psg"/>
-  <File Type="OPT-DRC" Name="display_controller_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="display_controller_timing_summary_init.rpt"/>
-  <File Type="OPT-TIMING" Name="display_controller_timing_summary_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="display_controller.hwdef"/>
-  <File Type="PWROPT-DCP" Name="display_controller_pwropt.dcp"/>
-  <File Type="PWROPT-DRC" Name="display_controller_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="display_controller_timing_summary_pwropted.rpt"/>
-  <File Type="PLACE-DCP" Name="display_controller_placed.dcp"/>
-  <File Type="PLACE-IO" Name="display_controller_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="display_controller_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="display_controller_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="display_controller_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="display_controller_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="display_controller_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="display_controller_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="display_controller_timing_summary_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="display_controller_postplace_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="display_controller_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="display_controller_physopt.dcp"/>
-  <File Type="RDI-RDI" Name="display_controller.vdi"/>
-  <File Type="PHYSOPT-DRC" Name="display_controller_drc_physopted.rpt"/>
-  <File Type="PHYSOPT-TIMING" Name="display_controller_timing_summary_physopted.rpt"/>
-  <File Type="ROUTE-DRC" Name="display_controller_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="display_controller_drc_routed.pb"/>
-  <File Type="ROUTE-PWR" Name="display_controller_power_routed.rpt"/>
-  <File Type="ROUTE-PWR-SUM" Name="display_controller_power_summary_routed.pb"/>
-  <File Type="ROUTE-STATUS" Name="display_controller_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="display_controller_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="display_controller_timing_summary_routed.rpt"/>
-  <File Type="ROUTE-TIMING-PB" Name="display_controller_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="display_controller_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="display_controller_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-CLK" Name="display_controller_clock_utilization_routed.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="display_controller_postroute_physopt.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="display_controller_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="display_controller_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="display_controller_timing_summary_postroute_physopted.rpx"/>
-  <File Type="BG-BIT" Name="display_controller.bit"/>
-  <File Type="BG-BIN" Name="display_controller.bin"/>
-  <File Type="BITSTR-MSK" Name="display_controller.msk"/>
-  <File Type="BITSTR-RBT" Name="display_controller.rbt"/>
-  <File Type="BITSTR-NKY" Name="display_controller.nky"/>
-  <File Type="BITSTR-BMM" Name="display_controller_bd.bmm"/>
-  <File Type="BITSTR-MMI" Name="display_controller.mmi"/>
-  <File Type="BITSTR-SYSDEF" Name="display_controller.sysdef"/>
-  <File Type="BG-BGN" Name="display_controller.bgn"/>
-  <File Type="BG-DRC" Name="display_controller.drc"/>
+  <File Type="OPT-DRC" Name="main_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="main_timing_summary_init.rpt"/>
+  <File Type="OPT-TIMING" Name="main_timing_summary_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="main.hwdef"/>
+  <File Type="PWROPT-DCP" Name="main_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="main_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="main_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="main_placed.dcp"/>
+  <File Type="PLACE-IO" Name="main_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="main_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="main_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="main_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="main_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="main_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="main_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="main_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="main_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="main_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="main_physopt.dcp"/>
+  <File Type="RDI-RDI" Name="main.vdi"/>
+  <File Type="PHYSOPT-DRC" Name="main_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="main_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-DRC" Name="main_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="main_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="main_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="main_power_summary_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="main_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="main_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="main_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="main_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="main_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="main_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="main_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="main_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="main_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="main_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="main_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="main.bit"/>
+  <File Type="BG-BIN" Name="main.bin"/>
+  <File Type="BITSTR-MSK" Name="main.msk"/>
+  <File Type="BITSTR-RBT" Name="main.rbt"/>
+  <File Type="BITSTR-NKY" Name="main.nky"/>
+  <File Type="BITSTR-BMM" Name="main_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="main.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="main.sysdef"/>
+  <File Type="BG-BGN" Name="main.bgn"/>
+  <File Type="BG-DRC" Name="main.drc"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
@@ -64,14 +64,13 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/main.vhd">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="display_controller"/>
+      <Option Name="TopModule" Val="main"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>

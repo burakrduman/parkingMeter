@@ -58,7 +58,7 @@ counting: process (slow_clk, temp_count)
     
         if pause='1' then
         temp_count<=temp_count;
-        
+        end if;
         if slow_clk'event and slow_clk='1' then
 --            if temp_count>0 then
 
