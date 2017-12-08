@@ -14,10 +14,13 @@ set_property parent.project_path C:/Users/BURAKPC/Vivado/parking-meter/parking-m
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property vhdl_version vhdl_2k [current_fileset]
-read_vhdl -library xil_defaultlib C:/Users/BURAKPC/Vivado/project_9/project_9.srcs/sources_1/new/display_controller.vhd
+read_vhdl -library xil_defaultlib {
+  C:/Users/BURAKPC/Vivado/project_9/project_9.srcs/sources_1/new/display_controller.vhd
+  C:/Users/BURAKPC/Vivado/parking-meter/parking-meter.srcs/sources_1/new/main.vhd
+}
 read_xdc C:/Users/BURAKPC/Vivado/project_9/project_9.srcs/constrs_1/new/constraint.xdc
 set_property used_in_implementation false [get_files C:/Users/BURAKPC/Vivado/project_9/project_9.srcs/constrs_1/new/constraint.xdc]
 
-synth_design -top display_controller -part xc7a35tcpg236-1
-write_checkpoint -noxdef display_controller.dcp
-catch { report_utilization -file display_controller_utilization_synth.rpt -pb display_controller_utilization_synth.pb }
+synth_design -top main -part xc7a35tcpg236-1
+write_checkpoint -noxdef main.dcp
+catch { report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb }
