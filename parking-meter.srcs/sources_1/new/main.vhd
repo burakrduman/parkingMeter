@@ -5,7 +5,6 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 
 entity main is
  Port (  clk : in std_logic;
-         pause : in std_logic;  --reset sw0
          reset : in std_logic;  --down button
          btn1: in std_logic;    --left button
          btn2: in std_logic;    --middle button
@@ -29,7 +28,7 @@ constant val: std_logic_vector (15 downto 0):="0000000000000000" ;
 constant valup: std_logic_vector (15 downto 0):="0000000000100000";  	--load 20 := 0010 0000 
 signal temp_count: std_logic_vector (15 downto 0):=val;
 signal slow_clk: std_logic;
-signal clk_divider: std_logic_vector (25 downto 0);
+signal clk_divider: std_logic_vector (24 downto 0);
 
 begin
 
@@ -49,17 +48,16 @@ clk_division: process (clk, clk_divider)
         if clk'event and clk='1' then
             clk_divider<=clk_divider +1;
         end if;        
-        slow_clk<=clk_divider(24);
+        slow_clk<=clk_divider(23);
     
 end process;
  
 counting: process (slow_clk, temp_count)
     begin
-    
-        if pause='1' then
-        temp_count<=temp_count;
-        end if;
-        if slow_clk'event and slow_clk='1' then
+        if (reset='1') then
+            temp_count <= val;  --tempcount==0
+        
+        elsif slow_clk'event and slow_clk='1' then
 --            if temp_count>0 then
 
                if temp_count(3 downto 0)=0 then
@@ -82,6 +80,7 @@ counting: process (slow_clk, temp_count)
                         else
                         temp_count(3 downto 0) <= temp_count(3 downto 0) - 1;
                         end if;
+            
                 if temp_count<val+1 then  -- when display less than 1 ,  wait  0000!!! 
                     temp_count<=val;
                  end if;
@@ -150,11 +149,6 @@ counting: process (slow_clk, temp_count)
                  if (btn3='1') then
 --                    temp_count <= temp_count + "0000000100100000";  --add 120
                     
-                    temp_count(11 downto 8) <= temp_count(11 downto 8) + 1;
-                         if temp_count(11 downto 8)="1001" then  --9 ise
-                                temp_count(11 downto 8)<="0000"; --0 yap
-                                temp_count(15 downto 12) <= temp_count(15 downto 12) + 1; --1 ekle
-                         end if;  
                     temp_count(7 downto 4) <= temp_count(7 downto 4) + 2;    
                          if temp_count(7 downto 4)="1001" then  --9 ise
                                 temp_count(7 downto 4)<="0001"; --1 yap
@@ -163,7 +157,13 @@ counting: process (slow_clk, temp_count)
                          if temp_count(7 downto 4)="1000" then  --8 ise
                                 temp_count(7 downto 4)<="0000"; --0 yap
                                 temp_count(11 downto 8) <= temp_count(11 downto 8) + 1; --1 ekle
-                         end if;      
+                         end if;  
+                    temp_count(11 downto 8) <= temp_count(11 downto 8) + 1;
+                              if temp_count(11 downto 8)="1001" then  --9 ise
+                                     temp_count(11 downto 8)<="0000"; --0 yap
+                                     temp_count(15 downto 12) <= temp_count(15 downto 12) + 1; --1 ekle
+                              end if;  
+                             
                    end if;
                  
                  if (btn4='1') then
@@ -182,12 +182,7 @@ counting: process (slow_clk, temp_count)
                                 temp_count(11 downto 8)<="0000"; --0 yap
                                 temp_count(15 downto 12) <= temp_count(15 downto 12) + 1; --1 ekle
                          end if;  
- 
-                 end if;
-                 
-                 if (reset='1') then
-                    temp_count <= val;  --tempcount==0
-                 end if;                                                       
+                  end if;                                           
    end if;
 end process;          
 end Behavioral;
