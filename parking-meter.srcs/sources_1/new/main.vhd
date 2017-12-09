@@ -5,7 +5,7 @@ use IEEE.STD_LOGIC_unsigned.ALL;
 
 entity main is
  Port (  clk : in std_logic;
-         reset : in std_logic;  --down button
+         reset : in std_logic;  --sw[0] button
          btn1: in std_logic;    --left button
          btn2: in std_logic;    --middle button
          btn3: in std_logic;    --right button
@@ -25,10 +25,10 @@ component display_controller is
          );
 end component; 
 constant val: std_logic_vector (15 downto 0):="0000000000000000" ;
-constant valup: std_logic_vector (15 downto 0):="0000000000100000";  	--load 20 := 0010 0000 
+--constant valup: std_logic_vector (15 downto 0):="0000000000100000";  	--load 20 := 0010 0000 
 signal temp_count: std_logic_vector (15 downto 0):=val;
 signal slow_clk: std_logic;
-signal clk_divider: std_logic_vector (24 downto 0);
+signal clk_divider: std_logic_vector (26 downto 0);
 
 begin
 
@@ -48,11 +48,11 @@ clk_division: process (clk, clk_divider)
         if clk'event and clk='1' then
             clk_divider<=clk_divider +1;
         end if;        
-        slow_clk<=clk_divider(23);
+        slow_clk<=clk_divider(25);
     
 end process;
  
-counting: process (slow_clk, temp_count)
+counting: process (slow_clk, temp_count, clk)
     begin
         if (reset='1') then
             temp_count <= val;  --tempcount==0
@@ -87,7 +87,7 @@ counting: process (slow_clk, temp_count)
               
               
                 if (btn1='1') then
---                    temp_count <= temp_count + "0000000000110000";  --add 30
+--                    temp_count <= temp_count + 30;  --add 30
 
                          if temp_count(7 downto 4)="0111" then  --7 ise
                                 temp_count(7 downto 4)<="0000"; --0 yap
@@ -149,23 +149,27 @@ counting: process (slow_clk, temp_count)
                  if (btn3='1') then
 --                    temp_count <= temp_count + "0000000100100000";  --add 120
                     
-                    temp_count(7 downto 4) <= temp_count(7 downto 4) + 2;    
                          if temp_count(7 downto 4)="1001" then  --9 ise
-                                temp_count(7 downto 4)<="0001"; --1 yap
-                                temp_count(11 downto 8) <= temp_count(11 downto 8) + 1; --1 ekle
-                         end if;      
-                         if temp_count(7 downto 4)="1000" then  --8 ise
-                                temp_count(7 downto 4)<="0000"; --0 yap
-                                temp_count(11 downto 8) <= temp_count(11 downto 8) + 1; --1 ekle
+                                    temp_count(7 downto 4)<="0001"; --1 yap
+                                    temp_count(11 downto 8) <= temp_count(11 downto 8) + "0010"; --2 ekle
+                               
+                             elsif temp_count(7 downto 4)="1000" then  --8 ise
+                                    temp_count(7 downto 4)<="0000"; --0 yap
+                                    temp_count(11 downto 8) <= temp_count(11 downto 8) + "0010"; --2 ekle
+                             else   
+                               temp_count(7 downto 4) <= temp_count(7 downto 4) + 2;     --2 ekle   
+                               temp_count(11 downto 8) <= temp_count(11 downto 8) + 1; --1 ekle
                          end if;  
-                    temp_count(11 downto 8) <= temp_count(11 downto 8) + 1;
-                              if temp_count(11 downto 8)="1001" then  --9 ise
-                                     temp_count(11 downto 8)<="0000"; --0 yap
-                                     temp_count(15 downto 12) <= temp_count(15 downto 12) + 1; --1 ekle
-                              end if;  
+                         if temp_count(11 downto 8)="1001" then  --9 ise
+                                temp_count(11 downto 8)<="0000"; --0 yap
+                                temp_count(15 downto 12) <= temp_count(15 downto 12) + 1; --1 ekle
+                             else
+                                temp_count(11 downto 8) <= temp_count(11 downto 8) + 1;
+                             
+                         end if;  
                              
                    end if;
-                 
+                                 
                  if (btn4='1') then
 --                    temp_count <= temp_count + "0000001100000000";  --add 300
 
@@ -182,7 +186,7 @@ counting: process (slow_clk, temp_count)
                                 temp_count(11 downto 8)<="0000"; --0 yap
                                 temp_count(15 downto 12) <= temp_count(15 downto 12) + 1; --1 ekle
                          end if;  
-                  end if;                                           
-   end if;
+                  end if;   
+     end if;                                                     
 end process;          
 end Behavioral;

@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2015.3 (win64) Build 1368829 Mon Sep 28 20:06:43 MDT 2015
-| Date              : Sat Dec 09 00:42:42 2017
+| Date              : Sat Dec 09 20:12:53 2017
 | Host              : BURAK running 64-bit major release  (build 9200)
 | Command           : report_clock_utilization -file main_clock_utilization_routed.rpt
 | Design            : main
@@ -47,7 +47,7 @@ Table of Contents
 +-------+--------------------+---------------+------+-------+-------+
 | Index | BUFG Cell          | Net Name      | BELs | Sites | Fixed |
 +-------+--------------------+---------------+------+-------+-------+
-|     1 | clk_IBUF_BUFG_inst | clk_IBUF_BUFG |   44 |    11 |    no |
+|     1 | clk_IBUF_BUFG_inst | clk_IBUF_BUFG |   46 |    12 |    no |
 +-------+--------------------+---------------+------+-------+-------+
 
 
@@ -68,7 +68,7 @@ Table of Contents
 +-------+---------------------+----------+------+-------+-------+
 | Index | Local Clk Src       | Net Name | BELs | Sites | Fixed |
 +-------+---------------------+----------+------+-------+-------+
-|     1 | clk_divider_reg[23] | slow_clk |   17 |    11 |    no |
+|     1 | clk_divider_reg[25] | slow_clk |   17 |    12 |    no |
 +-------+---------------------+----------+------+-------+-------+
 
 
@@ -81,7 +81,7 @@ Table of Contents
 | Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 | X0Y0              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  9600 |    0 |  1600 |    0 |    20 |    0 |    10 |    0 |    20 |
-| X1Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   60 | 12000 |    0 |  1800 |    0 |    40 |    0 |    20 |    0 |    20 |
+| X1Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   62 | 12000 |    0 |  1800 |    0 |    40 |    0 |    20 |    0 |    20 |
 | X0Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  9600 |    0 |  1600 |    0 |    20 |    0 |    10 |    0 |    20 |
 | X1Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 12000 |    0 |  1800 |    0 |    40 |    0 |    20 |    0 |    20 |
 | X0Y2              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 14400 |    0 |  1600 |    0 |    20 |    0 |    10 |    0 |    20 |
@@ -96,7 +96,7 @@ Table of Contents
 +-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+----------------+
 | Source Type | BUFHCE Site | Fixed | MMCM Pins | PLL Pins | GT Pins | BRAM Pins | ILOGICs | OLOGICs | FFs | LUTMs | DSP48E1s | Clock Net Name |
 +-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+----------------+
-| BUFG        | BUFHCE_X1Y8 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |  44 |     0 |        0 | clk_IBUF_BUFG  |
+| BUFG        | BUFHCE_X1Y8 |   no  |         0 |        0 |       0 |         0 |       0 |       0 |  46 |     0 |        0 | clk_IBUF_BUFG  |
 +-------------+-------------+-------+-----------+----------+---------+-----------+---------+---------+-----+-------+----------+----------------+
 
 
@@ -128,7 +128,7 @@ add_cells_to_pblock [get_pblocks  {CLKAG_clk_IBUF_BUFG}] [get_cells -filter { PR
 resize_pblock [get_pblocks {CLKAG_clk_IBUF_BUFG}] -add {CLOCKREGION_X1Y0:CLOCKREGION_X1Y0}
 #endgroup
 
-# Clock net "slow_clk" driven by instance "clk_divider_reg[23]" located at site "SLICE_X62Y17"
+# Clock net "slow_clk" driven by instance "clk_divider_reg[25]" located at site "SLICE_X62Y16"
 #startgroup
 create_pblock {CLKAG_slow_clk}
 add_cells_to_pblock [get_pblocks  {CLKAG_slow_clk}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="slow_clk"}]]]
