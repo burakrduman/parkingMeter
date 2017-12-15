@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2015.3 (win64) Build 1368829 Mon Sep 28 20:06:43 MDT 2015
-| Date             : Sat Dec 09 20:12:52 2017
+| Date             : Fri Dec 15 20:33:45 2017
 | Host             : BURAK running 64-bit major release  (build 9200)
 | Command          : 
 | Design           : main
@@ -29,18 +29,18 @@ Table of Contents
 1. Summary
 ----------
 
-+--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 14.572 (Junction temp exceeded!) |
-| Dynamic (W)              | 14.330                           |
-| Device Static (W)        | 0.242                            |
-| Effective TJA (C/W)      | 5.0                              |
-| Max Ambient (C)          | 12.1                             |
-| Junction Temperature (C) | 97.9                             |
-| Confidence Level         | Low                              |
-| Setting File             | ---                              |
-| Simulation Activity File | ---                              |
-| Design Nets Matched      | NA                               |
-+--------------------------+----------------------------------+
++--------------------------+-----------------------------------+
+| Total On-Chip Power (W)  | 134.409 (Junction temp exceeded!) |
+| Dynamic (W)              | 133.923                           |
+| Device Static (W)        | 0.486                             |
+| Effective TJA (C/W)      | 5.0                               |
+| Max Ambient (C)          | 0.0                               |
+| Junction Temperature (C) | 125.0                             |
+| Confidence Level         | Low                               |
+| Setting File             | ---                               |
+| Simulation Activity File | ---                               |
+| Design Nets Matched      | NA                                |
++--------------------------+-----------------------------------+
 
 
 1.1 On-Chip Components
@@ -49,16 +49,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.573 |      163 |       --- |             --- |
-|   LUT as Logic |     0.514 |       63 |     20800 |            0.30 |
-|   Register     |     0.027 |       62 |     41600 |            0.15 |
-|   CARRY4       |     0.026 |       12 |      8150 |            0.15 |
-|   BUFG         |     0.006 |        1 |        32 |            3.13 |
+| Slice Logic    |    55.111 |     4003 |       --- |             --- |
+|   LUT as Logic |    52.165 |     3019 |     20800 |           14.51 |
+|   CARRY4       |     2.864 |      488 |      8150 |            5.99 |
+|   Register     |     0.070 |      102 |     41600 |            0.25 |
+|   BUFG         |     0.012 |        2 |        32 |            6.25 |
 |   Others       |     0.000 |        4 |       --- |             --- |
-| Signals        |     0.509 |      146 |       --- |             --- |
-| I/O            |    13.248 |       17 |       106 |           16.04 |
-| Static Power   |     0.242 |          |           |                 |
-| Total          |    14.572 |          |           |                 |
+| Signals        |    54.305 |     3360 |       --- |             --- |
+| I/O            |    24.507 |       27 |       106 |           25.47 |
+| Static Power   |     0.486 |          |           |                 |
+| Total          |   134.409 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -68,16 +68,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     1.249 |       1.102 |      0.147 |
-| Vccaux    |       1.800 |     0.514 |       0.485 |      0.029 |
-| Vcco33    |       3.300 |     3.745 |       3.744 |      0.001 |
+| Vccint    |       1.000 |   109.777 |     109.436 |      0.341 |
+| Vccaux    |       1.800 |     0.951 |       0.897 |      0.053 |
+| Vcco33    |       3.300 |     6.932 |       6.931 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.004 |       0.000 |      0.004 |
+| Vccbram   |       1.000 |     0.010 |       0.000 |      0.010 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
@@ -135,8 +135,8 @@ Table of Contents
 +---------------+-----------+
 | Name          | Power (W) |
 +---------------+-----------+
-| main          |    14.330 |
-|   display_out |     0.247 |
+| main          |   133.923 |
+|   display_out |     0.376 |
 +---------------+-----------+
 
 
