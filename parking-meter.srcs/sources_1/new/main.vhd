@@ -11,7 +11,7 @@ entity main is
          LED2: out std_logic;
          LED3: out std_logic;
          LED4: out std_logic;
-         LED15: out std_logic;
+         LED15:out std_logic;
          led5: out std_logic;
          led6: out std_logic;
          led7: out std_logic;
@@ -37,12 +37,10 @@ component display_controller is
          );
 end component; 
 constant val: std_logic_vector (15 downto 0):="0000000000000000" ;
---constant valup: std_logic_vector (15 downto 0):="0000000000100000";  	--load 20 := 0010 0000 
 signal num: std_logic_vector (9 downto 0):="0000000000";
 signal temp_count: std_logic_vector (15 downto 0):=val;
 signal slow_clk: std_logic;
 signal clk_divider: std_logic_vector (25 downto 0);
-
 
 begin
 
@@ -76,7 +74,7 @@ counting: process (slow_clk, temp_count, clk)
         LED2 <= '0';
         LED3 <= '0';
         LED4 <= '0';
-        LED15 <= '0';
+        LED15<= '0';
         led5 <= '0';
         led6 <= '0';
         led7 <= '0';
@@ -86,8 +84,6 @@ counting: process (slow_clk, temp_count, clk)
             temp_count <= val;  --tempcount==0
             temp_int :=0;
             LED15 <= '1';
---            x0<=0;x1<=0,x2,x3,int2:='0';
-
       
         elsif slow_clk'event and slow_clk='1' then
 --            if temp_count>0 then
@@ -122,8 +118,7 @@ counting: process (slow_clk, temp_count, clk)
                      end if;
                      
                      a := temp_int;
-                     
-               
+                    
                      x0 := a mod 10;
                      a := (a - x0);
                      a := a / 10;
@@ -141,49 +136,23 @@ counting: process (slow_clk, temp_count, clk)
                         led5 <= '1';
                      end if;   
                      if (x1 = 0) then
-                                             led6 <= '1';
-                                          end if;
-                                          if (x2 = 0) then
-                                                                     led7 <= '1';
-                                                                  end if;
-                                                                  if (x3 = 0) then
-                                                                                             led8 <= '1';
-                                                                                          end if;                    
+                        led6 <= '1';
+                     end if;
+                     if (x2 = 0) then
+                        led7 <= '1';
+                     end if;
+                     if (x3 = 0) then
+                        led8 <= '1';
+                     end if;                
+                         
                      temp_count(3 downto 0) <= std_logic_vector(to_unsigned(x0, temp_count(3 downto 0)'length));
                      temp_count(7 downto 4) <= std_logic_vector(to_unsigned(x1, temp_count(7 downto 4)'length));
                      temp_count(11 downto 8) <= std_logic_vector(to_unsigned(x2, temp_count(11 downto 8)'length));
                      temp_count(15 downto 12) <= std_logic_vector(to_unsigned(x3, temp_count(15 downto 12)'length));
                      
-                     
                      if (temp_int > 0) then
                         temp_int := temp_int - 1;
-                     end if;
---               if temp_count(3 downto 0)=0 then
---                    temp_count(3 downto 0)<="1001";
---                if temp_count(7 downto 4)=0 then
---                    temp_count(7 downto 4)<="1001";
---                if temp_count(11 downto 8)=0 then
---                    temp_count(11 downto 8)<="1001";
---                if temp_count(15 downto 12)=0 then
---                    temp_count(15 downto 12)<="1001";
---                        else
---                        temp_count(15 downto 12) <= temp_count(15 downto 12) - 1;
---                        end if;
---                        else
---                        temp_count(11 downto 8) <= temp_count(11 downto 8) - 1;
---                        end if;
---                        else
---                        temp_count(7 downto 4) <= temp_count(7 downto 4) - 1;
---                        end if;    
---                        else
---                        temp_count(3 downto 0) <= temp_count(3 downto 0) - 1;
---                        end if;
-
-                     
-              
-        end if;   
-     
-     
-                                                       
+                     end if; 
+        end if;                                                     
     end process;          
 end Behavioral;
